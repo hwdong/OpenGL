@@ -26,7 +26,7 @@ int DoSelect(const Eigen::MatrixXd &V,int x, int y)
 {	
 	Eigen::Vector3d nearP, farP;
 	GetSelectionRay(x, y, nearP.data(), farP.data());
-	Eigen::Vector3d vec(farP[0] - nearP[0], farP[1] - nearP[1], farP[2] - nearP[2]);
+	Eigen::Vector3d vec = farP-nearP;
 
 	vec.normalize();
 	double min = 1.e9; 
